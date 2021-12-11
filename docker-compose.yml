@@ -1,0 +1,24 @@
+services:
+  devnet:
+    command:
+      - starknet-devnet
+      - --host
+      - "0.0.0.0"
+      - --port
+      - "5000"
+    image: shardlabs/starknet-devnet:0.1.9
+    ports:
+      - "5000:5000"
+  
+  test:
+    build: .
+    entrypoint: pytest
+    volumes:
+      - ./:/app
+
+  dev:
+    build: .
+    environment:
+      APP_STARKNET_GATEWAY_URL: "http://host.docker.internal:5000"
+    volumes:
+      - ./:/app

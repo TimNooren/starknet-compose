@@ -1,0 +1,7 @@
+cairo-lang
+cairo-nile
+click
+ecdsa
+fastecdsa
+pydantic
+sympy
