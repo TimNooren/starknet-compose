@@ -1,5 +1,3 @@
-import asyncio
-from functools import wraps
 from typing import Any, Iterator, Tuple
 
 from starkware.cairo.common.hash_state import compute_hash_on_elements
@@ -14,14 +12,7 @@ from starkware.starknet.services.api.gateway.gateway_client import (
     GatewayClient,
 )
 
-from app.utils import hex_to_int
-
-
-def as_sync(f):
-    @wraps(f)
-    def wrapper(*args, **kwargs):
-        return asyncio.run(f(*args, **kwargs))
-    return wrapper
+from app.utils import as_sync, hex_to_int
 
 
 @as_sync
