@@ -23,7 +23,8 @@ from app.utils import hex_to_int
 
 @click.group()
 @click.pass_context
-@click.option('--starknet-gateway-url', type=str, default=NETWORKS['alpha'])
+@click.option(
+    '--starknet-gateway-url', type=str, default=NETWORKS['alpha-goerli'])
 def cli(ctx: Context, starknet_gateway_url: str) -> None:
     try:
         with open('manifest.json') as f:
