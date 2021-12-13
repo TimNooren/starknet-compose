@@ -5,7 +5,7 @@ I'm trying to learn about Starknet and get familiar with the Cairo programming l
 - Signature validation
 - Unit testing
 
-Deploying contracts manually quickly got boring, so I started building a tool that lets the user define contracts in a config file, and deploy those contracts in one go. Something like `docker-compose` for Starknet contract. It also handles creating accounts (Account contract + key pair), and invoking other contracts through these accounts.
+Deploying contracts manually quickly got boring, so built a simple tool that lets the user define contracts in a config file, and deploy those contracts in one go (similar to the starknet-hardhat-plugin). It also handles creating accounts (Account contract + key pair), and invoking other contracts through these accounts.
 
 Next steps include:
 - Adding flexibility to contract definitions; allowing dynamic references to other contracts or accounts, for instance to pass an account address as the contract owner during construction.
