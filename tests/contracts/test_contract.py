@@ -41,8 +41,9 @@ async def test_set_owner(contract: StarknetContract) -> None:
     response = await contract.get_owner().call()
     assert response.result == (DEFAULT_CALLER_ADDRESS,)
 
-    # We're allowed to change the owner since get_caller_address() returns to 0
-    # and that is the owner we set during contract construction.
+    # We're allowed to change the owner since get_caller_address() returns the
+    # default address "0" and that is the owner we set during contract
+    # construction.
     new_owner = 1
     await contract.set_owner(new_owner=new_owner).invoke()
 
