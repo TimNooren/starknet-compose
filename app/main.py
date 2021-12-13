@@ -30,7 +30,7 @@ async def deploy(
 
 
 def deploy_from_manifest(
-    manifest: dict, gateway_client: GatewayClient,
+    manifest: list[dict], gateway_client: GatewayClient,
 ) -> Iterator[Tuple[dict[str, int], dict[str, Any]]]:
     for contract in manifest:
         abi, response = deploy(
